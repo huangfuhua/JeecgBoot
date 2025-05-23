@@ -324,5 +324,3 @@ justauth:
     type: default
     prefix: 'demo::'
     timeout: 1h
-
-
