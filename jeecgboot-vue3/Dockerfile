@@ -7,7 +7,7 @@ RUN echo "server {  \
                       location   /jeecgboot/ { \
                       proxy_pass              http://jeecg-boot-gateway:9999/; \
                       proxy_redirect          off; \
-                      proxy_set_header        Host jeecg-boot-gateway; \
+                      proxy_set_header        Host  jeecg-boot-gateway; \
                       proxy_set_header        X-Real-IP \$remote_addr; \
                       proxy_set_header        X-Forwarded-For \$proxy_add_x_forwarded_for; \
                   } \

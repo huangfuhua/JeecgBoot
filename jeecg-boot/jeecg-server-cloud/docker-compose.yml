@@ -31,17 +31,17 @@ services:
     networks:
       - jeecg-boot
 
-#  jeecg-boot-rabbitmq:
-#    image: rabbitmq:3.7.7-management
-#    ports:
-#      - 5672:5672
-#      - 15672:15672
-#    restart: always
-#    container_name: jeecg-boot-rabbitmq
-#    hostname: jeecg-boot-rabbitmq
-#    environment:
-#      RABBITMQ_DEFAULT_USER: guest
-#      RABBITMQ_DEFAULT_PASS: guest
+  #  jeecg-boot-rabbitmq:
+  #    image: rabbitmq:3.7.7-management
+  #    ports:
+  #      - 5672:5672
+  #      - 15672:15672
+  #    restart: always
+  #    container_name: jeecg-boot-rabbitmq
+  #    hostname: jeecg-boot-rabbitmq
+  #    environment:
+  #      RABBITMQ_DEFAULT_USER: guest
+  #      RABBITMQ_DEFAULT_PASS: guest
 
 
   jeecg-boot-nacos:
@@ -95,6 +95,14 @@ services:
     networks:
       - jeecg-boot
 
+  jeecg-boot-xxljob:
+    build:
+      context: ./jeecg-visual/jeecg-cloud-xxljob
+    ports:
+      - 9080:9080
+    container_name: jeecg-boot-xxljob
+    hostname: jeecg-boot-xxljob
+
 networks:
   jeecg-boot:
     name: jeecg_boot
@@ -113,10 +121,3 @@ networks:
 #    container_name: jeecg-boot-sentinel
 #    hostname: jeecg-boot-sentinel
 #
-#  jeecg-boot-xxljob:
-#    build:
-#      context: ./jeecg-visual/jeecg-cloud-xxljob
-#    ports:
-#      - 9080:9080
-#    container_name: jeecg-boot-xxljob
-#    hostname: jeecg-boot-xxljob
